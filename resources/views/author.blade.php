@@ -2,6 +2,7 @@
 
 @section('container')
 
-<h1>{{ $autx["author"] }}</h1>
+<h1>Author: {{ $aut["author"] }}</h1>
+<a href="{{ BASEURL }}/blog">Back</a>
 	
 @endsection

@@ -16,7 +16,10 @@
 		
 	</h1>
 	<h1>
-		<a href="{{ BASEURL }}/author/{{ $item["slug"] }}">hahaha</a>
+		<a href="{{ BASEURL }}/author/{{ $item["slug"] }}">Author</a>
+	</h1>
+	<h1>
+		<a href="{{ BASEURL }}/tahun/{{ $item["slug"] }}">Tahun Terbit</a>
 	</h1>
 	<h1>{{ $item["author"] }}</h1>
 	<h1>{{ $item["body"] }}</h1>
