@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Models\Post;
+
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
@@ -34,18 +37,18 @@ class PostController extends Controller
     }
 
 
-    public function post($slug)
+    public function post( Post $post)
     {
         return view('post', [
             "title" => "Single Post",
-            "post" => Post::find($slug)
+            "post" => $post
         ]);
     }
 
-    public function author($slug){
+    public function author(Post $author){
         return view('author', [
             "title" => "Halaman Author",
-            "aut" => Post::find($slug)
+            "aut" => $author        
         ]);
     }
 
@@ -54,6 +57,23 @@ class PostController extends Controller
             "title" => "Halaman Tahun",
             "tahun" => Post::find($slug)
     
+        ]);
+    }
+
+    public function cateAll()
+    {
+        return view('category', [
+            'title' => "Category",
+            'categories' => Category::all()
+        ]);
+    }
+
+    public function cateSingle(Category $category)
+    {
+        return view('categories', [
+            "title" => $category->name,
+            "post" => $category->posts,
+            "category" => $category->name
         ]);
     }
 

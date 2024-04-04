@@ -9,13 +9,10 @@
 	}
 </style>
 	{{-- <h1>{{ $Judul }}</h1> --}}
-	@foreach ($post as $item)
+	@foreach ($categories as $item)
 	<h1>
-		<a href="{{ BASEURL }}/posts/{{ $item->slug }}">{{ $item->title }}</a>
-		
-	</h1>
-	<h1>
-		<a href="{{ BASEURL }}/author/{{ $item->slug}}">Author</a>
+		<a href="{{ BASEURL }}/categories/{{ $item->slug }}">{{ $item->name }}</a>
+	
 	</h1>
 	{{-- <h1>{{ $item["author"] }}</h1> --}}
 	<h1>{{ $item["excerpt"] }}</h1>

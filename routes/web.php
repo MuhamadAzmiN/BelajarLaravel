@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Models\Category;
 use App\Models\Post;
 
 use Illuminate\Support\Facades\Route;
+
+use function PHPUnit\Framework\isEmpty;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +22,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 Route::get('/home', [PostController::class, 'home']);
 Route::get('/about', [PostController::class, 'about']);
 Route::get('/blog', [PostController::class, 'index'] );
-Route::get('posts/{slug}', [PostController::class, 'post']);
-Route::get('author/{slug}', [PostController::class, 'author']);
+Route::get('posts/{post:slug}', [PostController::class, 'post']);
+Route::get('author/{author:slug}', [PostController::class, 'author']);
 Route::get('tahun/{slug}', [PostController::class, 'tahun'] );
+Route::get('categories', [PostController::class, 'cateAll'] );
+Route::get('/categories/{category:slug}', [PostController::class, 'cateSingle'])    ;

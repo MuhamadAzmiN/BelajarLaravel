@@ -30,6 +30,9 @@
 				<a class="nav-link <?= $title === "Blog" ? "active" : "" ?>" href="blog">Blog</a>
 			  </li>
 			  <li class="nav-item">
+				<a class="nav-link <?= $title === "Category" ? "active" : "" ?>" href="categories"> Blog Category</a>
+			  </li>
+			  <li class="nav-item">
 				<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
 			  </li>
 			</ul>
