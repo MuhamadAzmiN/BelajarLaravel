@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('excerpt');
             $table->text('body');
             $table->string('author');
+            $table->string('user_id');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

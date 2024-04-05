@@ -1,8 +1,24 @@
+
+
 @extends('layout.main')
 
 @section('container')
-
-<h1>Author: {{ $aut->author}}</h1>
-<a href="{{ BASEURL }}/blog">Back</a>
+<style>
+	h1 {
+		font-size: 15px
+	}
+</style>
+{{-- <h1 style="font-size: 40px" class="mb-3">{{ $category}}</h1> --}}
+    @foreach ($post as $item)
 	
+        <h1>
+            <a href="{{ BASEURL }}/posts/{{ $item->slug }}">{{ $item->title }}</a>
+        </h1>
+		<p>{{ $item->user->name }}</p>
+        {{-- <h1>
+            <a href="{{ BASEURL }}/author/{{ $item->slug}}">Author</a>
+        </h1> --}}
+        <h1>{{ $item->excerpt }}</h1>
+    @endforeach
+
 @endsection

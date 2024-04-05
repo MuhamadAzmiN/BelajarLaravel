@@ -12,10 +12,10 @@
 	<h1>{{ $post["title"] }}</h1>
 	<h1>{{ $post["author"] }}</h1>
 	<p>
-		<a href="{{ BASEURL }}/categories/{{ $post->category->name }}">{{ $post->category->name }}</a>
+		<a href="{{ BASEURL }}/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
 	</p>
 	{!! $post->body !!}
 </article>
-<a href="{{ BASEURL }}/blog"> Back</a>
+<a class="mt-5" href="{{ BASEURL }}/blog"> Back</a>
 	
 @endsection

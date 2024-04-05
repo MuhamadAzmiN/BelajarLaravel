@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\Post;
-
+use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use PhpParser\Node\Expr\FuncCall;
 
 class PostController extends Controller
 {
@@ -14,7 +15,7 @@ class PostController extends Controller
         return view('posts', [
             "title" => "Blog",
             "Judul" => "Halaman",
-            "post" => Post::all()
+            "post" => Post::latest()->get()
         ]);
     }
 
@@ -45,12 +46,12 @@ class PostController extends Controller
         ]);
     }
 
-    public function author(Post $author){
-        return view('author', [
-            "title" => "Halaman Author",
-            "aut" => $author        
-        ]);
-    }
+    // public function author(Post $author){
+    //     return view('author', [
+    //         "title" => "Halaman Author",
+    //         "aut" => $author        
+    //     ]);
+    // }
 
     public function tahun($slug){
         return view('tahunTerbit', [
@@ -74,6 +75,22 @@ class PostController extends Controller
             "title" => $category->name,
             "post" => $category->posts,
             "category" => $category->name
+        ]);
+    }
+
+    public function author(Category $user)
+    {
+        return view('author', [
+            'title' => 'User Post',
+            'post' => $user->posts,
+        ]);
+    }
+
+    public function authorAll()
+    {
+        return view('authorAll', [
+            'title' => 'AuthorAll',
+            'post' => Post::all()
         ]);
     }
 

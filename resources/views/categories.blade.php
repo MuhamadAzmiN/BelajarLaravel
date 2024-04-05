@@ -8,6 +8,7 @@
 		font-size: 15px
 	}
 </style>
+<h1 style="font-size: 40px" class="mb-3">{{ $category}}</h1>
 @if ($post->isEmpty())
     <h1 style="text-align: center;font-size:50px;margin-top: 300px">No Postingan</h1>
 @else
