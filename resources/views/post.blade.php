@@ -16,6 +16,6 @@
 	</p>
 	{!! $post->body !!}
 </article>
-<a class="mt-5" href="{{ BASEURL }}/blog"> Back</a>
+<a class="mt-5e" href="{{ BASEURL }}/blog"> Back</a>
 	
 @endsection

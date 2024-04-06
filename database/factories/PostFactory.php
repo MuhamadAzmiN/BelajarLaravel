@@ -21,9 +21,8 @@ class PostFactory extends Factory
             'slug' => $this->faker->slug(),
             'excerpt' => $this->faker->paragraph(),
             'body' => $this->faker->paragraph(5,10),
-            'user_id' => mt_rand(1,3),
-            'category_id' => mt_rand(1,3),
-            'author' => "Muhamad Azmi Naziyulloh"
+            'user_id' => mt_rand(1,2),
+            'category_id' => mt_rand(1,2)
         ];
     }
 }

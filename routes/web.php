@@ -33,5 +33,5 @@ Route::get('author/{author:slug}', [PostController::class, 'author']);
 Route::get('tahun/{slug}', [PostController::class, 'tahun'] );
 Route::get('categories', [PostController::class, 'cateAll'] );
 Route::get('/categories/{category:slug}', [PostController::class, 'cateSingle']);
-Route::get('/authors/{user}', [PostController::class, 'author'] );
+Route::get('/authors/{author:username}', [PostController::class, 'author'] );
 Route::get('/authorAll', [PostController::class, 'authorAll']);

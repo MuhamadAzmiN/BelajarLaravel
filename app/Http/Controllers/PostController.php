@@ -15,7 +15,7 @@ class PostController extends Controller
         return view('posts', [
             "title" => "Blog",
             "Judul" => "Halaman",
-            "post" => Post::latest()->get()
+            "posts" => Post::latest()->get()
         ]);
     }
 
@@ -78,11 +78,11 @@ class PostController extends Controller
         ]);
     }
 
-    public function author(Category $user)
+    public function author(User $author)
     {
         return view('author', [
             'title' => 'User Post',
-            'post' => $user->posts,
+            'post' => $author->posts,
         ]);
     }
 
