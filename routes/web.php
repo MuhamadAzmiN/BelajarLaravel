@@ -35,3 +35,5 @@ Route::get('categories', [PostController::class, 'cateAll'] );
 Route::get('/categories/{category:slug}', [PostController::class, 'cateSingle']);
 Route::get('/authors/{author:username}', [PostController::class, 'author'] );
 Route::get('/authorAll', [PostController::class, 'authorAll']);
+Route::get('/RoleAll', [PostController::class, 'RoleAll']);
+Route::get('/RoleSingle/{roles:name}', [PostController::class, 'Roles']);

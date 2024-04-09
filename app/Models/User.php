@@ -43,8 +43,20 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    protected $guaeded = ["id"];
+
     public function posts()
     {
         return $this->hasMany(Post::class);
     }
+
+
+    public function Role()
+    {
+        return $this->belongsTo(Role::class, 'roles_id');
+    }
+
+    
+
+
 }

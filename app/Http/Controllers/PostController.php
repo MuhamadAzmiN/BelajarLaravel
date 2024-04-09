@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use PhpParser\Node\Expr\FuncCall;
@@ -86,11 +87,29 @@ class PostController extends Controller
         ]);
     }
 
+
     public function authorAll()
     {
         return view('authorAll', [
             'title' => 'AuthorAll',
-            'post' => Post::all()
+            'post' => User::all()
+        ]);
+    }
+    public function RoleAll()
+    {
+        return view('Role', [
+            'title' => "Role",
+            'role' => Role::all()
+
+        ]);
+    }
+
+
+    public function Roles(Role $roles)
+    {
+        return view('Roles', [
+            'title' => $roles->name,
+            'post' => $roles->posts
         ]);
     }
 

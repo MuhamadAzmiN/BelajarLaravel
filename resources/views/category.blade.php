@@ -15,7 +15,7 @@
 	
 	</h1>
 	{{-- <h1>{{ $item["author"] }}</h1> --}}
-	<h1>{{ $item["excerpt"] }}</h1>
+	
 		
 	@endforeach
 @endsection
