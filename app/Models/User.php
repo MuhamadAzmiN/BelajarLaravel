@@ -43,7 +43,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    protected $guaeded = ["id"];
+    protected $guarded = ['id'];
 
     public function posts()
     {
@@ -54,6 +54,11 @@ class User extends Authenticatable
     public function Role()
     {
         return $this->belongsTo(Role::class, 'roles_id');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class,'category_id');
     }
 
     

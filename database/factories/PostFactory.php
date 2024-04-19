@@ -20,10 +20,19 @@ class PostFactory extends Factory
             'title' => $this->faker->sentence(mt_rand(2,8)),
             'slug' => $this->faker->slug(),
             'excerpt' => $this->faker->paragraph(),
-            'body' => $this->faker->paragraph(5,10),
-            'user_id' => mt_rand(1,10),
-            'category_id' => mt_rand(1,2),
-            'role_id' => mt_rand(1,20)
+            // banyak cara nya
+            // 'body' => collect($this->faker->paragraphs(5,10))
+            //         ->map(function($p){
+            //             return "<p>$p</p>";
+            //         }),
+                'body' => collect($this->faker->paragraphs(5,10))
+                    ->map(fn($p) => "<p>$p</p>"
+                        )
+                        ->implode(''),
+
+            'user_id' => mt_rand(1,5),
+            'category_id' => mt_rand(1,5),
+            'role_id' => mt_rand(1,10)
         ];
     }
 }

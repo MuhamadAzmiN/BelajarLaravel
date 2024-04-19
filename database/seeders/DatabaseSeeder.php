@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         //
-        User::factory(50)->create();
-        Post::factory(20)->create();
-        Role::factory(20)->create();    
+        User::factory(10)->create();
+        Post::factory(10)->create();
+        Role::factory(10)->create();    
 
 
         Category::create([
@@ -29,28 +29,28 @@ class DatabaseSeeder extends Seeder
 
 
         Category::create([
-            'name' => 'Personal',
-            'slug' => 'personal'
+            'name' => 'Editor',
+            'slug' => 'Editor'
         ]);
 
-        // Role::create([
-        //     'name' => 'BackEnd Developer',
-        //     'slug' => 'backend developer'
-        // ]);
         
-        // Role::create([
-        //     'name' => 'Frontend Developer',
-        //     'slug' => 'frontend developer'
-        // ]);
-        
-        // Role::create([
-        //     'name' => 'Mobile Developer',
-        //     'slug' => 'Mobile developer'
-        // ]);
-        // Role::create([
-        //     'name' => 'Data Scientic',
-        //     'slug' => 'data scientic'
-        // ]);
+        Category::create([
+            'name' => 'Influencer',
+            'slug' => 'Influencer'
+        ]);
+
+
+        Category::create([
+            'name' => 'Teacher',
+            'slug' => 'Teacher'
+        ]);
+
+        Category::create([
+            'name' => 'gardener',
+            'slug' => 'gardener'
+        ]);
+
+
       
     }
 }

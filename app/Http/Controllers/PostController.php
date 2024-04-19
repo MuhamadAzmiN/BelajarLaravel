@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index()
     {
         return view('posts', [
-            "title" => "Blog",
+            "title" => "All Post",
             "Judul" => "Halaman",
             "posts" => Post::latest()->get()
         ]);
@@ -72,27 +72,27 @@ class PostController extends Controller
 
     public function cateSingle(Category $category)
     {
-        return view('categories', [
-            "title" => $category->name,
-            "post" => $category->posts,
+        return view('posts', [
+            "title" => "Post by Category $category->name",
+            "posts" => $category->posts->load('category', 'author'),
             "category" => $category->name
         ]);
     }
 
     public function author(User $author)
     {
-        return view('author', [
-            'title' => 'User Post',
-            'post' => $author->posts,
+        return view('posts', [
+            'title' => "Post by  Author $author->name",
+            'posts' => $author->posts->load('category', 'author'),
         ]);
     }
 
 
     public function authorAll()
     {
-        return view('authorAll', [
+        return view('posts', [
             'title' => 'AuthorAll',
-            'post' => User::all()
+            'posts' => Post  ::all()
         ]);
     }
     public function RoleAll()
@@ -110,6 +110,13 @@ class PostController extends Controller
         return view('Roles', [
             'title' => $roles->name,
             'post' => $roles->posts
+        ]);
+    }
+    public function All()
+    {
+        return view('All', [
+            'title' => "All",
+            'post' => Post::all()
         ]);
     }
 

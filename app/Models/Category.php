@@ -15,5 +15,15 @@ class Category extends Model
         return $this->hasMany(Post::class);
     }
 
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function user()
+    {
+        return $this->hasMany(User::class,  'user_id'); 
+    }
+
 
 }

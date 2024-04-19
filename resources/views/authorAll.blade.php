@@ -6,8 +6,8 @@
 	$i = 1
 @endphp
 @foreach ($post as $item)
-<h1 style="font-size: 15px">{{ $i++ }}.<a href="authors/{{ $item->name}}">{{ $item->name}} </a>Bekerja Di {{ $item->role->name }}</h1>
-	
+<h1 class="text-decoration-none" style="font-size: 15px">{{ $i++ }}.<a href="authors/{{ $item->name}}"></a>{{ $item->author->name }} Bekerja Di {{ $item->roles->name }} Sebagai {{ $item->category->name  }}</h1>
+
 @endforeach
 	
 @endsection

@@ -39,6 +39,9 @@
 				<a class="nav-link <?= $title === "Role" ? "active" : "" ?>" href="RoleAll"> Role ALL</a>
 			  </li>
 			  <li class="nav-item">
+				<a class="nav-link <?= $title === "All" ? "active" : "" ?>" href="All"> All</a>
+			  </li>
+			  <li class="nav-item">
 				<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
 			  </li>
 			</ul>
