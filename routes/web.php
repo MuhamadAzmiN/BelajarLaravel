@@ -4,6 +4,7 @@ use App\Http\Controllers\PostController;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Programming;
 
 use Illuminate\Support\Facades\Route;
 
@@ -37,4 +38,5 @@ Route::get('/authors/{author:username}', [PostController::class, 'author'] );
 Route::get('/authorAll', [PostController::class, 'authorAll']);
 Route::get('/RoleAll', [PostController::class, 'RoleAll']);
 Route::get('/RoleSingle/{roles:name}', [PostController::class, 'Roles']);
-Route::get('/All', [PostController::class, 'All']); 
+Route::get('/All', [PostController::class, 'All']);
+Route::get('/Programming', [PostController::class, 'Programming']); 

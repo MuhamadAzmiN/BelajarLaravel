@@ -32,7 +32,8 @@ class PostFactory extends Factory
 
             'user_id' => mt_rand(1,5),
             'category_id' => mt_rand(1,5),
-            'role_id' => mt_rand(1,10)
+            'role_id' => mt_rand(1,10),
+            'programming_id' => mt_rand(1,10)
         ];
     }
 }

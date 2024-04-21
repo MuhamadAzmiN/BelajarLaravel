@@ -15,6 +15,14 @@ class Post extends Model
     protected $guarded = ["id"];    
     protected $with = ['author', 'category'];
 
+
+    public function scopeFilter($query)
+    {
+        if(request('cari')){
+            $query->where('title', 'like', '%' . request('cari') . '%')->orWhere('body', 'like', '%' . request('cari') . '%');
+        }
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
@@ -28,6 +36,12 @@ class Post extends Model
     public function roles()
     {
         return $this->belongsTo(Role::class, 'role_id');
+    }
+
+
+    public function Programming()
+    {
+        return $this->belongsTo(Programming::class, 'programming_id' );
     }
 
     

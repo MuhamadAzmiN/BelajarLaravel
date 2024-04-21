@@ -21,29 +21,30 @@
 		  <div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 			  <li class="nav-item">
-				<a class="nav-link <?= $title === "Home" ? "active" : "" ?>	"  href="home">Home</a>
+				<a class="nav-link <?= $title === "Home" ? "active" : "" ?>	"  href="{{ BASEURL }}/home">Home</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link <?= $title === "About" ? "active" : "" ?>" href="about">About</a>
+				<a class="nav-link <?= $title === "About" ? "active" : "" ?>" href="{{ BASEURL }}/about">About</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link <?= $title === "Blog" ? "active" : "" ?>" href="blog">Blog</a>
+				<a class="nav-link <?= $active === "blog" ? "active" : "" ?>" href="{{ BASEURL }}/blog">Blog</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link <?= $title === "Category" ? "active" : "" ?>" href="categories"> Blog Category</a>
+				<a class="nav-link <?= $title === "Category" ? "active" : "" ?>" href="{{ BASEURL }}/categories"> Blog Category</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link <?= $title === "AuthorAll" ? "active" : "" ?>" href="authorAll"> Author All</a>
+				<a class="nav-link <?= $title === "AuthorAll" ? "active" : "" ?>" href="{{ BASEURL }}/authorAll"> Author All</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link <?= $title === "Role" ? "active" : "" ?>" href="RoleAll"> Role ALL</a>
+				<a class="nav-link <?= $title === "Role" ? "active" : "" ?>" href="{{ BASEURL }}/RoleAll"> Role ALL</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link <?= $title === "All" ? "active" : "" ?>" href="All"> All</a>
+				<a class="nav-link <?= $title === "All" ? "active" : "" ?>" href="{{ BASEURL }}/All"> All</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+				<a class="nav-link <?= $title === "Programming" ? "active" : "" ?>" href="{{ BASEURL }}/Programming"> All</a>
 			  </li>
+	
 			</ul>
 		  </div>
 		</div>

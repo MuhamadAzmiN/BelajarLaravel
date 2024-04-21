@@ -5,6 +5,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Role;
+use App\Models\Programming;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use PhpParser\Node\Expr\FuncCall;
@@ -12,11 +13,14 @@ use PhpParser\Node\Expr\FuncCall;
 class PostController extends Controller
 {
     public function index()
-    {
+    {   
+
+        // dd(request('cari'));
         return view('posts', [
             "title" => "All Post",
+            "active" => "blog",
             "Judul" => "Halaman",
-            "posts" => Post::latest()->get()
+            "posts" => Post::latest()->filter()->get()
         ]);
     }
 
@@ -24,6 +28,7 @@ class PostController extends Controller
     {
         return view('home', [
             "title" => "Home",
+            "active" => "Home",
             "halaman" => "Ini adalah Halaman home"
         ]);
     }
@@ -32,6 +37,7 @@ class PostController extends Controller
     public function about()
     {
         return view('about', [
+            "title" => "About",
             "title" => "About",
             "name" => "Muhamad Azmi Naziyulloh",
             "Email" => "azmi89017@gmail.com"
@@ -43,6 +49,7 @@ class PostController extends Controller
     {
         return view('post', [
             "title" => "Single Post",
+            'active' => "Single Post",
             "post" => $post
         ]);
     }
@@ -57,6 +64,7 @@ class PostController extends Controller
     public function tahun($slug){
         return view('tahunTerbit', [
             "title" => "Halaman Tahun",
+            "active" => "Halaman Tahun",
             "tahun" => Post::find($slug)
     
         ]);
@@ -66,6 +74,7 @@ class PostController extends Controller
     {
         return view('category', [
             'title' => "Category",
+            'active' => "Category",
             'categories' => Category::all()
         ]);
     }
@@ -74,6 +83,7 @@ class PostController extends Controller
     {
         return view('posts', [
             "title" => "Post by Category $category->name",
+            "active" => "Post by Category $category->name",
             "posts" => $category->posts->load('category', 'author'),
             "category" => $category->name
         ]);
@@ -83,6 +93,7 @@ class PostController extends Controller
     {
         return view('posts', [
             'title' => "Post by  Author $author->name",
+            'active' => "Post by  Author $author->name",
             'posts' => $author->posts->load('category', 'author'),
         ]);
     }
@@ -92,6 +103,7 @@ class PostController extends Controller
     {
         return view('posts', [
             'title' => 'AuthorAll',
+            'active' => 'AuthorAll',
             'posts' => Post  ::all()
         ]);
     }
@@ -99,6 +111,7 @@ class PostController extends Controller
     {
         return view('Role', [
             'title' => "Role",
+            'active' => "Role",
             'role' => Role::all()
 
         ]);
@@ -109,6 +122,7 @@ class PostController extends Controller
     {
         return view('Roles', [
             'title' => $roles->name,
+            'active' => $roles->name,
             'post' => $roles->posts
         ]);
     }
@@ -116,7 +130,18 @@ class PostController extends Controller
     {
         return view('All', [
             'title' => "All",
+            'active' => "All",
             'post' => Post::all()
+        ]);
+    }
+    
+
+    public function Programming()
+    {
+        return view('Programming', [
+            'title' => 'Programming',
+            'active' => 'Programming',
+            'Prog' => Programming::all()
         ]);
     }
 
